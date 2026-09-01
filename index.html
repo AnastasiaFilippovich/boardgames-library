@@ -42,5 +42,20 @@
             </ul>
             <button class="games-add-new">+ Добавить игру</button>
         </section>
+        <section class="modal-new hidden">
+            <button class="modal-new-close hidden">Закрыть</button>
+            <h2 class="modal-new__title">Добавить новую игру</h2>
+            <form class="modal-form">
+                <input class="modal-form__name" type="text" placeholder="Введи название игры">
+                <ul class="modal-form__tags">
+                    <li class="modal-tag">
+                        <input class="modal-tag__input" type="checkbox">
+                        <label for="modal-tag__input">Весёлая</label>
+                    </li>
+                </ul>
+                <input class="modal-form__players" type="text" placeholder="Введи количество игроков">
+                <textarea class="modal-form__description" placeholder="Опиши игру своими словами"></textarea>
+            </form>
+        </section>
     </body>
 </html>
