@@ -1,0 +1,34 @@
+html {
+    background-color: orange;
+    color: azure;
+}
+
+.search-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.games-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.game-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.tag {
+    width: auto;
+    display: block;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+.game-card__rating {
+    float: right;
+}
