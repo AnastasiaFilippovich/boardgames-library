@@ -29,6 +29,7 @@
                         </ul>
                         <span class="game-card__players">3-6 игроков</span>
                         <span class="game-card__rating">4.7</span>
+                        <button class="game-card__more">Подробнее</button>
                     </li>
                     <li class="game-card">
                         <h2 class="game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
@@ -39,38 +40,103 @@
                         </ul>
                         <span class="game-card__players">2 игрока</span>
                         <span class="game-card__rating">4.8</span>
+                        <button class="game-card__more">Подробнее</button>
                     </li>
                 </ul>
                 <button class="games-add-new" type="button">+ Добавить игру</button>
             </section>
         </main>
-        <div class="modal-new hidden">
+        <div class="modal-new">
             <div class="modal-new__content">
                 <button class="modal-new__close-button" type="button">Закрыть</button>
                 <h2 class="modal-new__title">Добавить новую игру</h2>
                 <form class="modal-form">
-                    <input class="modal-form__name" type="text" placeholder="Манчкин">
-                    <label for="modal-form__name">Название игры</label>
+                    <div class="modal-form__field">
+                        <label for="game-name">Название игры</label>
+                        <input class="modal-form__name" type="text" id="game-name" name="game-name" placeholder="Манчкин">
+                    </div>
                     <ul class="modal-form__tags">
                         <li class="modal-tag">
-                            <input class="modal-tag__input" type="checkbox">
-                            <label for="modal-tag__input">Весёлая</label>
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="fun">
+                                Весёлая
+                            </label>
                         </li>
-                        <li>
-                            <input class="modal-tag__input" type="checkbox">
-                            <label for="modal-tag__input">Хаотичная</label>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="chaotic">
+                                Хаотичная
+                            </label>
                         </li>
-                        <li>
-                            <input class="modal-tag__input" type="checkbox">
-                            <label for="modal-tag__input">Соревновательная</label>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="competitive">
+                                Соревновательная
+                            </label>
+                        </li>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="magic">
+                                Магическая
+                            </label>
                         </li>
                     </ul>
-                    <label for="modal-form__players">Количество игроков</label>
-                    <input class="modal-form__players" type="text" placeholder="2-4">
-                    <textarea class="modal-form__description" placeholder="Опиши игру своими словами"></textarea>
-                    <label for="modal-form__description">Описание игры (необязательно)</label>
+                    <div class="modal-form__field">
+                        <label for="game-players">Количество игроков</label>
+                        <input class="modal-form__players" type="text" id="game-players" name="game-players" placeholder="2-4">
+                    </div>
+                    <div class="modal-form__field">
+                        <label for="game-time">Время игры</label>
+                        <input class="modal-form__players" type="text" id="game-time" name="game-time" placeholder="от 30 минут">
+                    </div>
+                    <div class="modal-form__field">
+                        <label for="game-description">Описание игры (необязательно)</label>
+                        <textarea class="modal-form__description" id="game-description" name="game-description" placeholder="Опиши игру своими словами"></textarea>
+                    </div>
                     <button class="modal-form__submit" type="submit">Добавить игру</button>
                 </form>
+            </div>
+        </div>
+        <div class="modal-game-card">
+            <div class="modal-game-card__content">
+                <button class="modal-game-card__close-button" type="button">Закрыть</button>
+                <h2 class="modal-game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
+                <ul class="modal-game-card__tags">
+                    <li class="tag">Весёлая</li>
+                    <li class="tag">Магическая</li>
+                    <li class="tag">Соревновательная</li>
+                </ul>
+                <span class="modal-game-card__players">2 игрока</span>
+                <span class="modal-game-card__time">от 30 минут</span>
+                <span class="modal-game-card__rating">4.8</span>
+                <p class="modal-game-card__description">Игра, в которой игроки сражаются в фентезийном бою с помощью карточек</p>
+                <div class="modal-game-card__tabs">
+                    <button class="modal-game-card__tab-button tab-button--active" type="button">Оценки</button>
+                    <button class="modal-game-card__tab-button" type="button">Заметки</button>
+                    <div class="modal-game-card__tab tab--active">
+                        <ul class="tab__rating-list">
+                            <li class="rating-list__element">
+                                <span class="element__author">Кот</span>
+                                <span class="element__rating">5</span>
+                                <p class="element__comment">Отличная игра, моя любимая!</p>
+                            </li>
+                            <li class="rating-list__element">
+                                <span class="element__author">Марко</span>
+                                <span class="element__rating">4</span>
+                                <p class="element__comment">Немного затянутая, но крутая</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-game-card__tab">
+                        <ul class="tab__notes-list">
+                            <li class="notes-list__element">
+                                <span class="element__author">Марко</span>
+                                <span class="element__date">24.05.2026</span>
+                                <p class="element__comment">Лучше закладывать больше 30 минут на игру</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     <script src="script.js"></script>

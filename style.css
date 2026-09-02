@@ -50,12 +50,13 @@ body {
     margin: 0;
 }
 
-.game-card__tags {
+.game-card__tags, .modal-game-card__tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 5px;
     padding: 0;
+    list-style-type: none;
 }
 
 .tag {
@@ -73,7 +74,11 @@ body {
     float: right;
 }
 
-.modal-new {
+.modal-new, .modal-game-card {
+    display: none;
+}
+
+.modal-new--active, .modal-game-card--active {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -82,7 +87,7 @@ body {
     align-items: center;
 }
 
-.modal-new__content {
+.modal-new__content, .modal-game-card__content {
     width: 500px;
     padding: 50px;
     background-color: orange;
@@ -91,7 +96,7 @@ body {
     box-sizing: border-box;
 }
 
-.modal-form__tags {
+.modal-form__tags, .tab__rating-list, .tab__notes-list {
     list-style-type: none;
     padding: 0;
 }
@@ -101,4 +106,21 @@ body {
     border: 2px solid gray;
     box-sizing: border-box;
     border-radius: 8px;
+}
+
+.modal-game-card__title {
+    margin: 0;
+}
+
+.modal-form__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-game-card__tab {
+    display: none;
+}
+
+.tab--active {
+    display: block;
 }
