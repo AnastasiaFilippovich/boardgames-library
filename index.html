@@ -6,56 +6,73 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Библиотека настолок</h1>
-        <section class="search">
-            <input type="text" class="search__field" placeholder="Найти игру...">
-            <label for="search__field">Поиск</label>
-            <ul class="search-tags">
-                <li class="tag">Весёлая</li>
-                <li class="tag">Хаотичная</li>
-                <li class="tag">Соревновательная</li>
-                <li class="tag">Магическая</li>
-            </ul>
-        </section>
-        <section class="games">
-            <ul class="games-list">
-                <li class="game-card">
-                    <h2 class="game-card__title">Манчкин</h2>
-                    <ul class="game-card__tags">
-                        <li class="tag">Весёлая</li>
-                        <li class="tag">Хаотичная</li>
-                        <li class="tag">Соревновательная</li>
-                    </ul>
-                    <span class="game-card__players">3-6 игроков</span>
-                    <span class="game-card__rating">4.7</span>
-                </li>
-                <li class="game-card">
-                    <h2 class="game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
-                    <ul class="game-card__tags">
-                        <li class="tag">Весёлая</li>
-                        <li class="tag">Магическая</li>
-                        <li class="tag">Соревновательная</li>
-                    </ul>
-                    <span class="game-card__players">2 игрока</span>
-                    <span class="game-card__rating">4.8</span>
-                </li>
-            </ul>
-            <button class="games-add-new">+ Добавить игру</button>
-        </section>
-        <section class="modal-new hidden">
-            <button class="modal-new-close hidden">Закрыть</button>
-            <h2 class="modal-new__title">Добавить новую игру</h2>
-            <form class="modal-form">
-                <input class="modal-form__name" type="text" placeholder="Введи название игры">
-                <ul class="modal-form__tags">
-                    <li class="modal-tag">
-                        <input class="modal-tag__input" type="checkbox">
-                        <label for="modal-tag__input">Весёлая</label>
+        <main>
+            <h1>Библиотека настолок</h1>
+            <section class="search">
+                <input type="text" class="search__field" placeholder="Найти игру...">
+                <label for="search__field">Поиск</label>
+                <ul class="search-tags">
+                    <li class="tag">Весёлая</li>
+                    <li class="tag">Хаотичная</li>
+                    <li class="tag">Соревновательная</li>
+                    <li class="tag">Магическая</li>
+                </ul>
+            </section>
+            <section class="games">
+                <ul class="games-list">
+                    <li class="game-card">
+                        <h2 class="game-card__title">Манчкин</h2>
+                        <ul class="game-card__tags">
+                            <li class="tag">Весёлая</li>
+                            <li class="tag">Хаотичная</li>
+                            <li class="tag">Соревновательная</li>
+                        </ul>
+                        <span class="game-card__players">3-6 игроков</span>
+                        <span class="game-card__rating">4.7</span>
+                    </li>
+                    <li class="game-card">
+                        <h2 class="game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
+                        <ul class="game-card__tags">
+                            <li class="tag">Весёлая</li>
+                            <li class="tag">Магическая</li>
+                            <li class="tag">Соревновательная</li>
+                        </ul>
+                        <span class="game-card__players">2 игрока</span>
+                        <span class="game-card__rating">4.8</span>
                     </li>
                 </ul>
-                <input class="modal-form__players" type="text" placeholder="Введи количество игроков">
-                <textarea class="modal-form__description" placeholder="Опиши игру своими словами"></textarea>
-            </form>
-        </section>
+                <button class="games-add-new" type="button">+ Добавить игру</button>
+            </section>
+        </main>
+        <div class="modal-new hidden">
+            <div class="modal-new__content">
+                <button class="modal-new__close-button" type="button">Закрыть</button>
+                <h2 class="modal-new__title">Добавить новую игру</h2>
+                <form class="modal-form">
+                    <input class="modal-form__name" type="text" placeholder="Манчкин">
+                    <label for="modal-form__name">Название игры</label>
+                    <ul class="modal-form__tags">
+                        <li class="modal-tag">
+                            <input class="modal-tag__input" type="checkbox">
+                            <label for="modal-tag__input">Весёлая</label>
+                        </li>
+                        <li>
+                            <input class="modal-tag__input" type="checkbox">
+                            <label for="modal-tag__input">Хаотичная</label>
+                        </li>
+                        <li>
+                            <input class="modal-tag__input" type="checkbox">
+                            <label for="modal-tag__input">Соревновательная</label>
+                        </li>
+                    </ul>
+                    <label for="modal-form__players">Количество игроков</label>
+                    <input class="modal-form__players" type="text" placeholder="2-4">
+                    <textarea class="modal-form__description" placeholder="Опиши игру своими словами"></textarea>
+                    <label for="modal-form__description">Описание игры (необязательно)</label>
+                    <button class="modal-form__submit" type="submit">Добавить игру</button>
+                </form>
+            </div>
+        </div>
+    <script src="script.js"></script>
     </body>
 </html>

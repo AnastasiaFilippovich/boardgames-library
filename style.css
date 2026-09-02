@@ -1,24 +1,60 @@
 html {
     background-color: orange;
     color: azure;
+    width: 100%;
+}
+
+body {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .search-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 5px;
+    padding: 0;
+    list-style-type: none;
 }
 
 .games-list {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.game-card {
+    border: 5px solid azure;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    height: auto;
+    max-width: 500px;
+}
+
+.game-card__title {
+    margin: 0;
 }
 
 .game-card__tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 5px;
     padding: 0;
 }
 
@@ -26,9 +62,43 @@ html {
     width: auto;
     display: block;
     box-sizing: border-box;
-    margin-right: 20px;
+    padding: 3px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    color: black;
+    background-color: lightgray;
 }
 
 .game-card__rating {
     float: right;
+}
+
+.modal-new {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-new__content {
+    width: 500px;
+    padding: 50px;
+    background-color: orange;
+    border: 5px solid azure;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.modal-form__tags {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-new__close-button {
+    background-color: lightgray;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
