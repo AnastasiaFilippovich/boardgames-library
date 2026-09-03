@@ -11,12 +11,16 @@
             <h1>Библиотека настолок</h1>
             <section class="search">
                 <label for="search-field">Поиск</label>
-                <input type="text" class="search__field" id="search-field" placeholder="Найти игру...">
+                <input type="text" class="search__field" id="search-field" placeholder="Каркассон">
+                <button class="search-button" type="button">Найти</button>
                 <ul class="search-tags">
                     <li class="tag">Весёлая</li>
                     <li class="tag">Хаотичная</li>
                     <li class="tag">Соревновательная</li>
                     <li class="tag">Магическая</li>
+                    <li class="tag">Спокойная</li>
+                    <li class="tag">Командная</li>
+                    <li class="tag">Стратегическая</li>
                 </ul>
             </section>
             <section class="games">
@@ -40,7 +44,7 @@
                 <form class="modal-form">
                     <div class="modal-form__field">
                         <label for="game-name">Название игры</label>
-                        <input class="modal-form__name" type="text" id="game-name" name="game-name" placeholder="Манчкин">
+                        <input class="modal-form__name" type="text" id="game-name" name="game-name" placeholder="Манчкин" required>
                     </div>
                     <ul class="modal-form__tags">
                         <li class="modal-tag">
@@ -70,11 +74,11 @@
                     </ul>
                     <div class="modal-form__field">
                         <label for="game-players">Количество игроков</label>
-                        <input class="modal-form__players" type="text" id="game-players" name="game-players" placeholder="2-4">
+                        <input class="modal-form__players" type="text" id="game-players" name="game-players" placeholder="2-4" required>
                     </div>
                     <div class="modal-form__field">
                         <label for="game-time">Время игры</label>
-                        <input class="modal-form__players" type="text" id="game-time" name="game-time" placeholder="от 30 минут">
+                        <input class="modal-form__players" type="text" id="game-time" name="game-time" placeholder="от 30 минут" required>
                     </div>
                     <div class="modal-form__field">
                         <label for="game-description">Описание игры (необязательно)</label>
@@ -87,41 +91,35 @@
         <div class="modal-game-card">
             <div class="modal-game-card__content">
                 <button class="modal-game-card__close-button" type="button">Закрыть</button>
-                <h2 class="modal-game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
-                <ul class="modal-game-card__tags">
-                    <li class="tag">Весёлая</li>
-                    <li class="tag">Магическая</li>
-                    <li class="tag">Соревновательная</li>
-                </ul>
-                <span class="modal-game-card__players">2 игрока</span>
-                <span class="modal-game-card__time">от 30 минут</span>
-                <span class="modal-game-card__rating">4.8</span>
-                <p class="modal-game-card__description">Игра, в которой игроки сражаются в фентезийном бою с помощью карточек</p>
+                <h2 class="modal-game-card__title"></h2>
+                <ul class="modal-game-card__tags"></ul>
+                <span class="modal-game-card__players"></span>
+                <span class="modal-game-card__time"></span>
+                <span class="modal-game-card__rating"></span>
+                <p class="modal-game-card__description"></p>
                 <div class="modal-game-card__tabs">
                     <button class="modal-game-card__tab-button tab-button--active" type="button" data-button="rating">Оценки</button>
                     <button class="modal-game-card__tab-button" type="button" data-button="notes">Заметки</button>
+                    <template id="rating-element-template">
+                        <li class="rating-list__element">
+                            <span class="element__date"></span>
+                            <span class="element__author"></span>
+                            <span class="element__rating"></span>
+                            <p class="element__comment"></p>
+                        </li>
+                    </template>
+                    <template id="notes-element-template">
+                        <li class="notes-list__element">
+                            <span class="element__date"></span>
+                            <span class="element__author"></span>
+                            <p class="element__comment"></p>
+                        </li>
+                    </template>
                     <div class="modal-game-card__tab tab--active" data-tab="rating">
-                        <ul class="tab__rating-list">
-                            <li class="rating-list__element">
-                                <span class="element__author">Кот</span>
-                                <span class="element__rating">5</span>
-                                <p class="element__comment">Отличная игра, моя любимая!</p>
-                            </li>
-                            <li class="rating-list__element">
-                                <span class="element__author">Марко</span>
-                                <span class="element__rating">4</span>
-                                <p class="element__comment">Немного затянутая, но крутая</p>
-                            </li>
-                        </ul>
+                        <ul class="tab__rating-list"></ul>
                     </div>
                     <div class="modal-game-card__tab" data-tab="notes">
-                        <ul class="tab__notes-list">
-                            <li class="notes-list__element">
-                                <span class="element__author">Марко</span>
-                                <span class="element__date">24.05.2026</span>
-                                <p class="element__comment">Лучше закладывать больше 30 минут на игру</p>
-                            </li>
-                        </ul>
+                        <ul class="tab__notes-list"></ul>
                     </div>
                 </div>
             </div>
