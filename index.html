@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Библиотека настолок</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -9,8 +10,8 @@
         <main>
             <h1>Библиотека настолок</h1>
             <section class="search">
-                <input type="text" class="search__field" placeholder="Найти игру...">
-                <label for="search__field">Поиск</label>
+                <label for="search-field">Поиск</label>
+                <input type="text" class="search__field" id="search-field" placeholder="Найти игру...">
                 <ul class="search-tags">
                     <li class="tag">Весёлая</li>
                     <li class="tag">Хаотичная</li>
@@ -19,30 +20,16 @@
                 </ul>
             </section>
             <section class="games">
-                <ul class="games-list">
+                <template id="game-card-template">
                     <li class="game-card">
-                        <h2 class="game-card__title">Манчкин</h2>
-                        <ul class="game-card__tags">
-                            <li class="tag">Весёлая</li>
-                            <li class="tag">Хаотичная</li>
-                            <li class="tag">Соревновательная</li>
-                        </ul>
-                        <span class="game-card__players">3-6 игроков</span>
-                        <span class="game-card__rating">4.7</span>
+                        <h2 class="game-card__title"></h2>
+                        <ul class="game-card__tags"></ul>
+                        <span class="game-card__players"></span>
+                        <span class="game-card__rating"></span>
                         <button class="game-card__more">Подробнее</button>
                     </li>
-                    <li class="game-card">
-                        <h2 class="game-card__title">Время приключений: Карточные войны. Финн против Джейка</h2>
-                        <ul class="game-card__tags">
-                            <li class="tag">Весёлая</li>
-                            <li class="tag">Магическая</li>
-                            <li class="tag">Соревновательная</li>
-                        </ul>
-                        <span class="game-card__players">2 игрока</span>
-                        <span class="game-card__rating">4.8</span>
-                        <button class="game-card__more">Подробнее</button>
-                    </li>
-                </ul>
+                </template>
+                <ul class="games-list"></ul>
                 <button class="games-add-new" type="button">+ Добавить игру</button>
             </section>
         </main>
@@ -111,9 +98,9 @@
                 <span class="modal-game-card__rating">4.8</span>
                 <p class="modal-game-card__description">Игра, в которой игроки сражаются в фентезийном бою с помощью карточек</p>
                 <div class="modal-game-card__tabs">
-                    <button class="modal-game-card__tab-button tab-button--active" type="button">Оценки</button>
-                    <button class="modal-game-card__tab-button" type="button">Заметки</button>
-                    <div class="modal-game-card__tab tab--active">
+                    <button class="modal-game-card__tab-button tab-button--active" type="button" data-button="rating">Оценки</button>
+                    <button class="modal-game-card__tab-button" type="button" data-button="notes">Заметки</button>
+                    <div class="modal-game-card__tab tab--active" data-tab="rating">
                         <ul class="tab__rating-list">
                             <li class="rating-list__element">
                                 <span class="element__author">Кот</span>
@@ -127,7 +114,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="modal-game-card__tab">
+                    <div class="modal-game-card__tab" data-tab="notes">
                         <ul class="tab__notes-list">
                             <li class="notes-list__element">
                                 <span class="element__author">Марко</span>

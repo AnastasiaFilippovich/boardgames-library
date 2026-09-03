@@ -108,6 +108,11 @@ body {
     border-radius: 8px;
 }
 
+.modal-game-card__tabs {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 .modal-game-card__title {
     margin: 0;
 }
