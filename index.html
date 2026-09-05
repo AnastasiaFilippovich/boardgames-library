@@ -11,17 +11,31 @@
             <h1>Библиотека настолок</h1>
             <section class="search">
                 <label for="search-field">Поиск</label>
-                <input type="text" class="search__field" id="search-field" placeholder="Каркассон">
-                <button class="search-button" type="button">Найти</button>
+                <input type="search" class="search__field" id="search-field" placeholder="Каркассон">
                 <ul class="search-tags">
-                    <li class="tag">Весёлая</li>
-                    <li class="tag">Хаотичная</li>
-                    <li class="tag">Соревновательная</li>
-                    <li class="tag">Магическая</li>
-                    <li class="tag">Спокойная</li>
-                    <li class="tag">Командная</li>
-                    <li class="tag">Стратегическая</li>
+                    <li>
+                        <button class="tag" type="button" data-tag="fun">Весёлая</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="chaotic">Хаотичная</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="competitive">Соревновательная</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="magic">Магическая</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="calm">Спокойная</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="cooperative">Командная</button>
+                    </li>
+                    <li>
+                        <button class="tag" type="button" data-tag="strategic">Стратегическая</button>
+                    </li>
                 </ul>
+                <button class="search-reset" type="button">Сбросить фильтры</button>
             </section>
             <section class="games">
                 <template id="game-card-template">
@@ -33,7 +47,9 @@
                         <button class="game-card__more">Подробнее</button>
                     </li>
                 </template>
-                <ul class="games-list"></ul>
+                <ul class="games-list">
+                    <span class="empty-search">Таких игр нет... Пока что</span>
+                </ul>
                 <button class="games-add-new" type="button">+ Добавить игру</button>
             </section>
         </main>
@@ -69,6 +85,24 @@
                             <label>
                                 <input class="modal-tag__input" type="checkbox" name="tags" value="magic">
                                 Магическая
+                            </label>
+                        </li>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="calm">
+                                Спокойная
+                            </label>
+                        </li>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="cooperative">
+                                Командная
+                            </label>
+                        </li>
+                        <li class="modal-tag">
+                            <label>
+                                <input class="modal-tag__input" type="checkbox" name="tags" value="strategic">
+                                Стратегическая
                             </label>
                         </li>
                     </ul>

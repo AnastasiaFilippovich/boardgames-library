@@ -129,3 +129,15 @@ body {
 .tab--active {
     display: block;
 }
+
+.tag--active {
+    background-color: darkgray;
+}
+
+.empty-search {
+    display: none;
+}
+
+.empty-search--active {
+    display: inline;
+}

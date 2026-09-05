@@ -3,7 +3,7 @@ const GAMES = [
         id: 1,
         name: 'Каркассон',
         tags: ['calm', 'strategic'],
-        players: '2-5',
+        players: '2-5 игроков',
         playTime: '35-45 минут',
         rating: 4.7,
         description: 'Стратегия про строительство',
@@ -29,7 +29,7 @@ const GAMES = [
         id: 2,
         name: 'Зомби в доме: Заражение',
         tags: ['fun', 'cooperative'],
-        players: '2-5',
+        players: '2-5 игроков',
         playTime: 'от 30 минут',
         rating: 4.8,
         description: 'Компания друзей пытается выбраться из дома, полного зомби',
@@ -89,6 +89,11 @@ const ratingElementTemplate = document.querySelector('#rating-element-template')
 const notesElementTemplate = document.querySelector('#notes-element-template');
 const ratingContainer = gameCardModal.querySelector('.tab__rating-list');
 const notesContainer = gameCardModal.querySelector('.tab__notes-list');
+const searchBlock = document.querySelector('.search');
+const searchField = document.querySelector('.search__field');
+const tagButtons = searchBlock.querySelectorAll('.tag');
+const resetButton = searchBlock.querySelector('.search-reset');
+const emptySearchNote = document.querySelector('.empty-search');
 
 const createGameCard = (cardData) => {
     const gameCardsBlockFragment = document.createDocumentFragment();
@@ -254,4 +259,39 @@ newGameForm.addEventListener('submit', function(evt) {
 
     GAMES.push(gameData);
     nextId++;
+    closeNewGameModal();
+});
+
+searchField.addEventListener('input', () => {
+    emptySearchNote.classList.remove('empty-search--active');
+    const query = searchField.value.toLowerCase();
+    const filteredGames = GAMES.filter(game => game.name.toLowerCase().includes(query));
+    renderGameCards(filteredGames);
+    if (filteredGames.length == 0) {
+        emptySearchNote.classList.add('empty-search--active');
+    }
+});
+
+tagButtons.forEach(button => button.addEventListener('click', (evt) => {
+    emptySearchNote.classList.remove('empty-search--active');
+    button.classList.toggle('tag--active');
+    const tagsData = [];
+    const activeTags = searchBlock.querySelectorAll('.tag--active');
+
+    if (activeTags.length > 0) {
+        activeTags.forEach(tag => tagsData.push(tag.dataset.tag));
+        const taggedGames = GAMES.filter(game => game.tags.some(tag => tagsData.includes(tag)));
+        renderGameCards(taggedGames);
+        if (taggedGames.length == 0) {
+            emptySearchNote.classList.add('empty-search--active');
+        }
+    } else {
+        renderGameCards(GAMES);
+    }
+}));
+
+resetButton.addEventListener('click', () => {
+    searchField.value = '';
+    tagButtons.forEach(button => button.classList.remove('tag--active'));
+    renderGameCards(GAMES);
 });
